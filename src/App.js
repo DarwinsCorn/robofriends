@@ -18,23 +18,24 @@ export default function App() {
         fetch("https://jsonplaceholder.typicode.com/users")
         .then(response=>response.json())
         .then(users=>setRobots(users))
-        console.log("im fetching");
         },
         []         
     );
 
     useEffect(()=>{
         setFiltBot(robots.filter(robot=>robot.name.toLowerCase().includes(searchVal.toLowerCase())))
-        console.log("im filtering")
     }
     , [robots, searchVal]
     );
     
     return(
         <div className="tc">
-            <h1 className="f-headline">Robofriends</h1>
-            <SearchBox onChangeCallBack={searchUpd} />
-            <CardList robots={filtBot} />
+            <Scroll>
+                <h1 className="f-headline">Robofriends</h1>
+                <SearchBox onChangeCallBack={searchUpd} />
+            </Scroll>
+                <CardList robots={filtBot} />
+            
         </div>
     )
 }
