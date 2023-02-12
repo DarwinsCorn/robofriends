@@ -1,0 +1,6 @@
+.cabezero {
+    background: linear-gradient(to left, rgb(193, 137, 33), rgb(226, 93, 153));
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
